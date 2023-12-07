@@ -82,8 +82,8 @@ let DatabaseController = class DatabaseController {
         router.put("/:id", (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const idMedecin = parseInt(req.params.id, 10);
-                const modifiedDoctor = req.body;
-                const result = yield this.databaseService.modifydoctor(modifiedDoctor, idMedecin);
+                // const modifiedDoctor: Medecin = req.body;
+                const result = yield this.databaseService.modifydoctor(idMedecin);
                 res.json(result);
             }
             catch (error) {

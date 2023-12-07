@@ -1,0 +1,121 @@
+<div>
+
+    
+        <h1 class="title">Création d'un médecin</h1>
+
+        <div>
+        <mat-form-field class="InformationsMedecins">
+            <mat-label for="medecin" >Identifiant du médécin</mat-label>
+            <input
+                matInput
+                id="idmedecin"
+                type="number"
+                min="0" 
+                max="999999999"
+                step="1"
+                [(ngModel)]="medecin.idmedecin"
+                placeholder="Saisir l'identifiant du médecin"
+                required
+            />
+            <mat-error class="validity">Erreur message si nécessaire</mat-error>
+        </mat-form-field>
+        </div>
+
+        <div>
+        <mat-form-field class="InformationsMedecins">
+            <mat-label for="nom" >Nom:</mat-label>
+            <input
+                matInput
+                id="nommed"
+                type="text"
+                [(ngModel)]="medecin.nom"
+                placeholder="Saisir le nom du médecin"
+                required
+            />
+            <mat-error class="validity">Erreur message si nécessaire</mat-error>
+        </mat-form-field>
+        </div>
+
+        <div>
+        <mat-form-field class="InformationsMedecins">
+            <mat-label for="prenom"  >Prénom:</mat-label>
+            <input
+                matInput
+                id="prenommed"
+                type="text"
+                [(ngModel)]="medecin.prenom"
+                placeholder="Saisir le prénom du médecin"
+                required
+            />
+        </mat-form-field>
+        </div>
+        <div>
+        <mat-form-field class="SpecialiteMed">
+            <mat-label for="specialite">Spécialité</mat-label>
+            <mat-select id="specialitemed" name="specialite" [(ngModel)]="medecin.specialite" required>
+                <mat-option value="Orthopédie">Orthopédie</mat-option>
+                <mat-option value="Dermatologie">Dermatologie</mat-option>
+                <mat-option value="Neurologie">Neurologie</mat-option>
+                <mat-option value="Ophtalmologie">Ophtalmologie</mat-option>
+                <mat-option value="Pédiatrie">Pédiatrie</mat-option>
+                <mat-option value="Psychiatrie">Psychiatrie</mat-option>
+                <mat-option value="Radiologie">Radiologie</mat-option>
+                <mat-option value="Urologie">Urologie</mat-option>
+                <mat-option value="Chirurgie">Chirurgie</mat-option>
+                <mat-option value="Gynécologie">Gynécologie</mat-option>
+                <mat-option value="Cardiologie">Cardiologie</mat-option>
+                <mat-option value="Oncologie">Oncologie</mat-option>
+                <mat-option value="Gastro-entérologie">Gastro-entérologie</mat-option>
+                <mat-option value="Endocrinologie">Endocrinologie</mat-option>
+                <mat-option value="Hématologie">Hématologie</mat-option>
+                <mat-option value="Néphrologie">Néphrologie</mat-option>
+                <mat-option value="Pneumologie">Pneumologie</mat-option>
+                <mat-option value="Rhumatologie">Rhumatologie</mat-option>
+                <mat-option value="Médecine interne">Médecine interne</mat-option>
+            </mat-select>
+            <mat-error class="validity">Erreur message si nécessaire</mat-error>
+        </mat-form-field>
+        </div>
+
+        <div>
+        <mat-form-field class="InformationsMedecins">
+            <mat-label for="anneesExperience">Années d'expérience:</mat-label>
+            <input
+                matInput
+                [(ngModel)]="medecin.anneesExperience"
+                id="anneesExperience"
+                type="number"
+                min="0" 
+                max="65"
+                step="1"
+                placeholder="Saisir le nombre d'années d'expérience du médecin"
+                required
+            />
+            <mat-error class="validity">Erreur message si nécessaire</mat-error>
+        </mat-form-field>
+        </div>
+
+        <div>
+        <mat-form-field class="InformationsMedecins">
+            <mat-label for="idService">Service:</mat-label>
+            <input
+                matInput
+                id="idService"
+                type="number"
+                min="0" 
+                max="18"
+                step="1"
+                [(ngModel)]="medecin.idService"
+                placeholder="Saisir le numéro du service du médecin"
+                required
+            />
+            <mat-error class="validity">Erreur message si nécessaire</mat-error>
+        </mat-form-field>
+        </div>
+
+        
+    <button mat-raised-button color="primary" (click)="chooseAction">Créer le médecin</button>
+
+</div>
+
+

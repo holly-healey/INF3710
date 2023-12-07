@@ -1,0 +1,36 @@
+    <div   class ="listePrincipale">
+        <h1 class ="title">Les médécins de l'hôpital</h1>
+        <table class = "tableMedecins"> 
+            <tr class = "header">
+                <th id="idMedecins">Identifiant </th>
+                <th id = "prenomsMedecins">Prenom</th>
+                <th id="nomsMedecins">Nom</th>
+                <th id="specMedecins">Specialite</th>
+                <th id="experienceMedecins">Années d'experience</th>
+                <th id="serviceMedecins">Service du médécin</th>
+                <th id="actionsMedecins"th>
+            </tr>        
+            <tr *ngFor="let medecin of medecinList$ | async" class = "medecin">
+
+                <td>{{medecin.idmedecin}}</td>
+                <td>{{medecin.prenom}}</td>
+                <td>{{medecin.nom}}</td>
+                <td>{{medecin.specialite}}</td>
+                <td>{{medecin.anneesExperience}}</td>
+                <td>{{medecin.idService}}</td>
+                <td>
+                <button class ="fa fa-2x fa-search"  mat-raised-button color="primary" routerLink="/medecins/modifier/{{medecin.idmedecin}}">Modifier</button>
+                <button  (click) = "deleteMedecin(medecin.idmedecin)" color="primary">Supprimer</button>
+                </td>
+
+            </tr>
+
+        </table>
+        <button mat-raised-button color="primary" routerLink="/medecins/ajouter">Ajouter un médecin</button>
+    </div>
+
+
+        
+    
+  
+  

@@ -46,8 +46,12 @@ let DatabaseService = class DatabaseService {
         });
     }
     // === Modifier les informations d'un médécin ===
-    modifydoctor(medecin, oldid) {
+    modifydoctor(oldid) {
         return __awaiter(this, void 0, void 0, function* () {
+            const medecin = yield this.getDoctorById(oldid);
+            if (medecin.length === 0) {
+                throw new Error(`Médecin avec l'ID ${oldid} introuvable.`);
+            }
             const values = [medecin.idmedecin, medecin.prenom, medecin.nom, medecin.specialite, medecin.anneesExperience, medecin.idService];
             const queryText = `UPDATE MEDECINS SET idmedecin =$1, prenom = $2, nom = $3, specialite = $4, anneesExperience = $5, idService = $6 WHERE idmedecin = $7;`;
             const client = yield this.pool.connect();
